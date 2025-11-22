@@ -71,9 +71,9 @@ class Preprocessor:
         epochs_copy = epochs.copy()
         self.ica.fit(epochs_copy)
         
-        # Find and exclude EOG artifacts automatically
-        eog_indices, eog_scores = self.ica.find_bads_eog(epochs_copy, verbose=False)
-        self.ica.exclude = eog_indices
+        # # Find and exclude EOG artifacts automatically
+        # eog_indices, eog_scores = self.ica.find_bads_eog(epochs_copy, verbose=False)
+        # self.ica.exclude = eog_indices
         
         # Apply ICA to remove artifacts
         epochs_clean = self.ica.apply(epochs.copy(), verbose=False)
