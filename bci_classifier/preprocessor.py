@@ -94,13 +94,12 @@ class Preprocessor:
             
         Returns
         -------
-        epochs_clean : mne.Epochs
-            Epochs after rejection
+        epochs_clean : mne.Epochs after rejection
         """
         if reject_criteria is None:
             reject_criteria = {
                 'eeg': 150e-6,  # 150 µV
-                'eog': 250e-6,  # 250 µV
+                # 'eog': 250e-6,  # 250 µV
             }
         
         epochs_clean = epochs.copy()
